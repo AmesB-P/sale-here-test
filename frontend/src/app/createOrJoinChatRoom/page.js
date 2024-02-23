@@ -1,6 +1,5 @@
 "use client"
-import {AnimatePresence, motion} from "framer-motion";
-import {useState} from "react";
+import {motion} from "framer-motion";
 import {useUser} from "@/app/hooks/useUser";
 import Link from 'next/link'
 

@@ -17,7 +17,7 @@ const Messages = ({userName, roomId = "1"}) => {
                }
             }
         `;
-    const {data , loading , error} = useSubscription(
+    const {data } = useSubscription(
         GET_MESSAGES ,
         {
             variables : {roomId},
@@ -64,7 +64,7 @@ export default function EnterName() {
     }
     `;
 
-    const [sendMessage, {data, loading, error}] = useMutation(POST_MESSAGE)
+    const [sendMessage] = useMutation(POST_MESSAGE)
 
 
     const newMessage = async (event) => {
