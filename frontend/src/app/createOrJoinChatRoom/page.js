@@ -6,17 +6,20 @@ import Link from 'next/link'
 export default function EnterName() {
     const {userName} = useUser();
     return (
-
         <div className={"h-[90vh] rounded-[20px] bg-[#ffffff] flex flex-col items-center p-20 gap-4"}>
-            <span className={"text-[37px] text-[#383838]"}>
+            <motion.span className={"text-[37px] text-[#383838]"}
+                         initial={{y: 20, opacity: 0}}
+                         animate={{y: 0, opacity: !!userName ? 1 : 0,}}
+                         transition={{duration: 0.2}}
+            >
                 คุณ {userName}
-            </span>
+            </motion.span>
 
             <div className={"flex flex-col grid-cols-1 h-full gap-2 justify-center items-center"}>
                     <motion.div
                         initial={{y: 20, opacity: 0}}
                         animate={{y: 0, opacity: !!userName ? 1 : 0,}}
-                        transition={{duration: 0.4}}
+                        transition={{duration: 0.6}}
                     >
                         <Link href={"/createOrJoinChatRoom/createRoom"}>
                             <motion.button
@@ -30,7 +33,7 @@ export default function EnterName() {
                     <motion.div
                         initial={{y: 20, opacity: 0}}
                         animate={{y: 0, opacity: !!userName ? 1 : 0,}}
-                        transition={{duration: 0.2}}
+                        transition={{duration: 0.8}}
                     >
                         <Link href={"/createOrJoinChatRoom/joinRoom"}>
                             <motion.button

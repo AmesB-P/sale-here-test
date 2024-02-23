@@ -8,20 +8,28 @@ export default function EnterName({type = "create"}) {
     return (
 
         <div className={"h-[90vh] rounded-[20px] bg-[#ffffff] flex flex-col items-center p-20 gap-6"}>
-            <span className={"text-[37px] text-[#383838]"}>
+            <motion.span className={"text-[37px] text-[#383838]"}
+                         initial={{y: 20, opacity: 0}}
+                         animate={{y: 0, opacity: 1}}
+                         transition={{duration: 0.2}}
+            >
                 {
                     type === "create" ? "สร้างห้องใหม่" : "เข้าร่วมแชท"
                 }
-            </span>
+            </motion.span>
 
-            <input className={"text-[#4e4e4e] border-[3px] border-[#D3D3D3] border-solid h-[60px] rounded-[10px] text-[34px] w-[60%] text-center"}
-            onChange={(e) => setRoomId(e.target.value)}/>
+            <motion.input className={"text-[#4e4e4e] border-[3px] border-[#D3D3D3] border-solid h-[60px] rounded-[10px] text-[34px] w-[60%] text-center"}
+            onChange={(e) => setRoomId(e.target.value)}
+                          initial={{y: 20, opacity: 0}}
+                          animate={{y: 0, opacity: 1}}
+                          transition={{duration: 0.4}}
+            />
 
             <div className={"flex flex-row grid-cols-1 h-full gap-2 "}>
                 <motion.div
                     initial={{y: 20, opacity: 0}}
                     animate={{y: 0, opacity: 1}}
-                    transition={{duration: 0.4}}
+                    transition={{duration: 0.6}}
                 >
 
                     <Link href={"/createOrJoinChatRoom"}>
@@ -37,7 +45,7 @@ export default function EnterName({type = "create"}) {
                 <motion.div
                     initial={{y: 20, opacity: 0}}
                     animate={{y: 0, opacity: 1}}
-                    transition={{duration: 0.2}}
+                    transition={{duration: 0.8}}
                 >
                     <Link href={"/chatRoom"}>
                         <motion.button

@@ -3,8 +3,13 @@ import {AnimatePresence, motion} from "framer-motion";
 import Link from 'next/link'
 import {useUser} from "@/app/hooks/useUser";
 
+/**
+ *
+ * @return {JSX.Element}
+ * @constructor
+ */
 export default function EnterName() {
-    // const [userName, setUserName] = useState("")
+
     const {userName, setUserName} = useUser()
 
     const handleClickEnterName =()=>{
