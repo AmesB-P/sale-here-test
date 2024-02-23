@@ -2,8 +2,8 @@ import {Prompt} from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 import Logo from "@/assets/images/logo.png";
-import UserProvider from '../context/user'
 import {AppProviders} from "@/app/providers";
+
 const prompt = Prompt({
     weight: '400',
     subsets: ["latin"]
