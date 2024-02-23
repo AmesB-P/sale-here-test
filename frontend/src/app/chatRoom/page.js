@@ -2,7 +2,7 @@
 import {useState} from "react";
 import {useUser} from "@/app/hooks/useUser";
 import {useRoom} from "@/app/hooks/useRoom";
-import {useMutation, useSubscription, gql, useQuery} from '@apollo/client';
+import {useMutation, useSubscription, gql} from '@apollo/client';
 import {motion} from "framer-motion";
 
 const Messages = ({userName, roomId = "1"}) => {
