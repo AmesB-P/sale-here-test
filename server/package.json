@@ -1,0 +1,23 @@
+{
+  "name": "sale-here-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  },
+  "dependencies": {
+    "graphql": "^16.8.1",
+    "graphql-ws": "^5.15.0",
+    "graphql-yoga": "^5.1.1",
+    "subscriptions-transport-ws": "^0.11.0",
+    "ws": "^8.16.0"
+  }
+}
