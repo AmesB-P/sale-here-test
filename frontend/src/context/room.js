@@ -1,7 +1,15 @@
 "use client"
 import {createContext, useState} from "react";
 
-export const RoomContext = createContext(null)
+
+/**
+ *
+ * @typedef {Object} TRoomContext
+ * @property {string} roomId
+ * @property {function} setRoomId
+ */
+
+export const RoomContext = createContext(/** @type {TRoomContext} */null)
 export default function roomProvider ({children}) {
     const [roomId , setRoomId] = useState("")
 

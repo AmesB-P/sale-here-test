@@ -5,6 +5,13 @@ import {useRoom} from "@/app/hooks/useRoom";
 import {useMutation, useSubscription, gql} from '@apollo/client';
 import {motion} from "framer-motion";
 
+/**
+ *
+ * @param {string} userName
+ * @param {string} roomId
+ * @return {JSX.Element|null}
+ * @constructor
+ */
 const Messages = ({userName, roomId = "1"}) => {
 
     const [roomMessages, setRoomMessages] = useState([])
@@ -39,9 +46,11 @@ const Messages = ({userName, roomId = "1"}) => {
             {roomMessages.map((message, index) => {
                 return (
                     <div key={index} className={`${message.user === userName ? `text-end` : `text-start`} mt-4`}>
-                        <p className={"mb-1"}>{message.user}</p>
+                        <p className={"mb-1"}> {message.user !== userName ? "คุณ" : ""} {message.user}</p>
+
                         <span
-                            className={"text-[0.9rem] text-white pr-4 pl-4 pt-2 pb-2 bg-blue-500 rounded-[15px]  bg-gradient-to-br from-[#c41417] to-[#b31315]"}>
+                            className={"text-[0.9rem] text-black pr-4 pl-4 pt-2 pb-2 rounded-[15px]  bg-gray-200"}
+                        >
                             {message.text}
                         </span>
                     </div>
@@ -50,7 +59,13 @@ const Messages = ({userName, roomId = "1"}) => {
         </div>
     )
 }
-export default function EnterName() {
+
+/**
+ *
+ * @return {JSX.Element}
+ * @constructor
+ */
+export default function ChatRoom() {
     const {roomId} = useRoom();
     const {userName} = useUser();
 
@@ -68,8 +83,10 @@ export default function EnterName() {
 
     const [sendMessage] = useMutation(POST_MESSAGE)
 
+    //Function for create new message
     const newMessage = async (event) => {
         if (event.key === "Enter") {
+            //if userName & text !== "" | null | undefined will return true and invoke function to send new message
             if (!!userName && !!text) {
                 await sendMessage({variables: {roomId, text, user: userName}});
                 setText("");

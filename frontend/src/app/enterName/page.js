@@ -12,9 +12,6 @@ export default function EnterName() {
 
     const {userName, setUserName} = useUser()
 
-    const handleClickEnterName =()=>{
-        localStorage.setItem("userName" , JSON.stringify(userName))
-    }
     return (
         <div className={"h-[90vh] rounded-[20px] bg-[#ffffff] flex flex-col items-center p-20 gap-4 "}>
             <span className={"text-[37px] text-[#383838]"}>
@@ -34,7 +31,8 @@ export default function EnterName() {
                         <Link href={{pathname : "/createOrJoinChatRoom"}}>
                         <motion.button
                             className={"text-white hover:text-[#c41417] bg-[#ffffff] bg-gradient-to-br from-[#c41417] to-[#b31315] rounded-[10px] w-full pr-10 pl-10 pt-5 pb-5"}
-                            onClick={handleClickEnterName}
+                            whileHover={{ scale : 1.2}}
+                            whileTap={{ scale : 1}}
                         >
                                 ยืนยัน
                         </motion.button>

@@ -3,12 +3,12 @@ import {createContext,useState} from "react";
 
 /**
  *
- * @typedef {UserContext} - value of user context
- * @property {userName} - Name of the user
- * @property {setUserName} - Function useState for storing name of user
+ * @typedef {Object} TUserContext
+ * @property {string} userName
+ * @property {function} setUserName
  */
 
-export const UserContext = createContext(null)
+export const UserContext = createContext(/** @type {TUserContext} */null)
 export default function userProvider ({children}) {
     const [userName , setUserName] = useState("")
 

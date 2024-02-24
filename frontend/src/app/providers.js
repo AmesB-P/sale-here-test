@@ -5,7 +5,7 @@ import {ApolloProvider} from "@apollo/client";
 import {client} from "@/apollo/configServer";
 
 /**
- *
+ * All Providers for the whole app
  * @param children - App children
  * @return {JSX.Element}
  * @constructor

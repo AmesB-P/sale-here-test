@@ -1,8 +1,8 @@
 "use client"
 
 import Room from '../../../../components/Room'
-export default function EnterName() {
-    // const [userName, setUserName] = useState("")
+export default function JoinRoom() {
+
     return (
         <Room type={"join"}/>
     )

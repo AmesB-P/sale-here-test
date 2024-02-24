@@ -1,9 +1,8 @@
 "use client"
 
 import Room from '../../../../components/Room'
-export default function EnterName() {
-    // const [userName, setUserName] = useState("")
+export default function CreateRoom() {
     return (
-        <Room type={"create"}/>
+        <Room type={"create"} />
     )
 }
